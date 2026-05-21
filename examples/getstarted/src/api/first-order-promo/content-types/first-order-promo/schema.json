@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "first_order_promos",
+  "info": {
+    "singularName": "first-order-promo",
+    "pluralName": "first-order-promos",
+    "displayName": "First Order Promo Card"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "promo_code": {
+      "type": "string",
+      "required": true
+    },
+    "discount_text": {
+      "type": "string"
+    },
+    "expiry_text": {
+      "type": "string"
+    },
+    "button_text": {
+      "type": "string",
+      "default": "Copy Code"
+    },
+    "background_color": {
+      "type": "string"
+    },
+    "text_color": {
+      "type": "string"
+    },
+    "section_key": {
+      "type": "string",
+      "required": true
+    },
+    "enabled": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  }
+}

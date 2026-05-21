@@ -2,56 +2,36 @@
   "kind": "collectionType",
   "collectionName": "categories",
   "info": {
-    "displayName": "Category",
     "singularName": "category",
     "pluralName": "categories",
-    "description": "",
-    "name": "Category"
+    "displayName": "Category",
+    "description": "Organize your content into categories"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
-  "pluginOptions": {
-    "i18n": {
-      "localized": true
-    }
-  },
+  "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "category"
+    },
+    "description": {
+      "type": "text"
     },
     "addresses": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::address.address",
       "mappedBy": "categories"
-    },
-    "temps": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::temp.temp",
-      "mappedBy": "categories"
-    },
-    "datetime": {
-      "type": "datetime",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
-    "date": {
-      "type": "date",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
     },
     "relation_locales": {
       "type": "relation",
@@ -65,10 +45,10 @@
       "target": "api::relation-locale.relation-locale",
       "mappedBy": "category"
     },
-    "articles": {
+    "temps": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::article.article",
+      "target": "api::temp.temp",
       "mappedBy": "categories"
     }
   }

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "info_cards",
+  "info": {
+    "singularName": "info-card",
+    "pluralName": "info-cards",
+    "displayName": "Info Card"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "background_color": {
+      "type": "string"
+    },
+    "text_color": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "section_key": {
+      "type": "string",
+      "required": true
+    },
+    "enabled": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  }
+}

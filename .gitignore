@@ -150,7 +150,7 @@ test-results
 tests/e2e/.env
 !tests/cli/data/*.tar.gz
 tests/cli/.env
-
+.env
 ############################
 # AI tools
 ############################

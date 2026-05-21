@@ -1,51 +1,41 @@
-const sqlite = {
-  client: 'sqlite',
-  connection: {
-    filename: '.tmp/data.db',
-  },
-  useNullAsDefault: true,
-};
+const client = process.env.DATABASE_CLIENT || 'sqlite';
 
-const postgres = {
-  client: 'postgres',
-  connection: {
-    database: 'strapi',
-    user: 'strapi',
-    password: 'strapi',
-    port: 5432,
-    host: 'localhost',
+const connections = {
+  sqlite: {
+    client: 'sqlite',
+    connection: { filename: '.tmp/data.db' },
+    useNullAsDefault: true,
   },
-};
-
-const mysql = {
-  client: 'mysql',
-  connection: {
-    database: 'strapi',
-    user: 'strapi',
-    password: 'strapi',
-    port: 3306,
-    host: 'localhost',
+  postgres: {
+    client: 'postgres',
+    connection: {
+      host: process.env.DATABASE_HOST || 'localhost',
+      port: parseInt(process.env.DATABASE_PORT || '5432', 10),
+      database: process.env.DATABASE_NAME || 'strapi',
+      user: process.env.DATABASE_USERNAME || 'strapi',
+      password: process.env.DATABASE_PASSWORD || 'strapi',
+      ssl: process.env.DATABASE_SSL === 'true',
+    },
+    searchPath: [process.env.DATABASE_SCHEMA || 'public'],
   },
-};
-
-const mariadb = {
-  client: 'mysql',
-  connection: {
-    database: 'strapi',
-    user: 'strapi',
-    password: 'strapi',
-    port: 3307,
-    host: 'localhost',
+  mysql: {
+    client: 'mysql',
+    connection: {
+      host: process.env.DATABASE_HOST || 'localhost',
+      port: parseInt(process.env.DATABASE_PORT || '3306', 10),
+      database: process.env.DATABASE_NAME || 'strapi',
+      user: process.env.DATABASE_USERNAME || 'strapi',
+      password: process.env.DATABASE_PASSWORD || 'strapi',
+    },
   },
 };
 
-const db = {
-  mysql,
-  sqlite,
-  postgres,
-  mariadb,
-};
+function resolveConnection() {
+  if (client === 'postgres') return connections.postgres;
+  if (client === 'mysql') return connections.mysql;
+  return connections.sqlite;
+}
 
 module.exports = {
-  connection: process.env.DB ? db[process.env.DB] || db.sqlite : db.sqlite,
+  connection: resolveConnection(),
 };

@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "restaurants",
+  "collectionName": "strapi_menu_items",
   "info": {
-    "singularName": "restaurant",
-    "pluralName": "restaurants",
-    "displayName": "Restaurant"
+    "singularName": "menu-item",
+    "pluralName": "menu-items",
+    "displayName": "Menu Item"
   },
   "options": {
     "draftAndPublish": true
@@ -18,24 +18,25 @@
     "description": {
       "type": "string"
     },
-    "image_url": {
-      "type": "string",
+    "price": {
+      "type": "decimal",
       "required": true
     },
-    "rating": {
-      "type": "decimal"
+    "image_url": {
+      "type": "string"
     },
-    "is_popular": {
+    "is_veg": {
       "type": "boolean",
       "default": false
     },
-    "location_name": {
+    "meal_type": {
       "type": "string"
     },
-    "kitchen_type": {
-      "type": "string"
+    "category": {
+      "type": "string",
+      "required": true
     },
-    "is_active": {
+    "is_available": {
       "type": "boolean",
       "default": true
     },
@@ -43,10 +44,6 @@
       "type": "boolean",
       "required": true,
       "default": true
-    },
-    "section_key": {
-      "type": "string",
-      "required": true
     }
   }
 }

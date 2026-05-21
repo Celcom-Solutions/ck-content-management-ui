@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "category_items",
+  "info": {
+    "singularName": "category-item",
+    "pluralName": "category-items",
+    "displayName": "Category Item"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image_url": {
+      "type": "string",
+      "required": true
+    },
+    "action_type": {
+      "type": "enumeration",
+      "required": true,
+      "enum": ["DEEP_LINK", "WEB_URL", "FILTER", "API_CALL"]
+    },
+    "action_value": {
+      "type": "string"
+    },
+    "section_key": {
+      "type": "string",
+      "required": true
+    },
+    "priority": {
+      "type": "biginteger",
+      "required": true
+    },
+    "enabled": {
+      "type": "boolean",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "animation_banners",
+  "info": {
+    "singularName": "animation-banner",
+    "pluralName": "animation-banners",
+    "displayName": "Animation Banner"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "gif_url": {
+      "type": "string",
+      "required": true
+    },
+    "gif_file": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "files"]
+    },
+    "animation_type": {
+      "type": "enumeration",
+      "enum": [
+        "fade-in",
+        "slide-left",
+        "slide-right",
+        "slide-up",
+        "slide-down",
+        "bounce",
+        "rotate",
+        "zoom",
+        "custom"
+      ],
+      "default": "fade-in"
+    },
+    "duration": {
+      "type": "integer",
+      "default": 500
+    },
+    "delay": {
+      "type": "integer",
+      "default": 0
+    },
+    "loop": {
+      "type": "boolean",
+      "default": true
+    },
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "priority": {
+      "type": "integer",
+      "default": 1
+    },
+    "section_key": {
+      "type": "string",
+      "default": "animation_banners"
+    },
+    "link_url": {
+      "type": "string"
+    },
+    "cta_text": {
+      "type": "string"
+    }
+  }
+}
