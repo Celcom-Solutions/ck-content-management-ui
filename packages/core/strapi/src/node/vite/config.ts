@@ -194,6 +194,9 @@ const resolveDevelopmentConfig = async (ctx: BuildContext): Promise<InlineConfig
         server: ctx.options.hmrServer,
         clientPort: ctx.options.hmrClientPort,
       },
+      fs: {
+        allow: [ctx.cwd, ...(monorepo ? [monorepo.path] : [])],
+      },
     },
     appType: 'custom',
   };

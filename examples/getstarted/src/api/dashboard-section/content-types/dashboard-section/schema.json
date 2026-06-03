@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dashboard_sections",
+  "info": {
+    "singularName": "dashboard-section",
+    "pluralName": "dashboard-sections",
+    "displayName": "Dashboard Section",
+    "description": "Controls which sections appear on each app page, their type, order, and visibility"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_key": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "page_name": {
+      "type": "enumeration",
+      "enum": [
+        "HOME",
+        "HOME_PRODUCTS",
+        "CATERER",
+        "SUBSCRIPTION",
+        "OFFERS"
+      ],
+      "required": true
+    },
+    "section_type": {
+      "type": "enumeration",
+      "enum": [
+        "banner_carousel",
+        "food_type_section",
+        "category_grid",
+        "restaurant_horizontal_list",
+        "info_card",
+        "animation_banner",
+        "popular_food_grid",
+        "first_order_promo_card",
+        "recommended_restaurants",
+        "strapi_restaurant_list",
+        "weather_alert_card",
+        "offers_section",
+        "promo_section"
+      ],
+      "required": true
+    },
+    "priority": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    },
+    "enabled": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "subtitle": {
+      "type": "string",
+      "required": false
+    },
+    "min_app_version": {
+      "type": "string",
+      "required": false
+    },
+    "start_time": {
+      "type": "datetime",
+      "required": false
+    },
+    "end_time": {
+      "type": "datetime",
+      "required": false
+    }
+  }
+}

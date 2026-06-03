@@ -15,6 +15,7 @@ const connections = {
       user: process.env.DATABASE_USERNAME || 'strapi',
       password: process.env.DATABASE_PASSWORD || 'strapi',
       ssl: process.env.DATABASE_SSL === 'true',
+      schema: process.env.DATABASE_SCHEMA || 'public',
     },
     searchPath: [process.env.DATABASE_SCHEMA || 'public'],
   },
@@ -38,4 +39,8 @@ function resolveConnection() {
 
 module.exports = {
   connection: resolveConnection(),
+  settings: {
+    runMigrations: false,
+    forceMigration: false,
+  },
 };

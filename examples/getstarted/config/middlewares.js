@@ -43,4 +43,10 @@ module.exports = [
     resolve: './src/custom/middleware.js',
     config: {},
   },
+  {
+    resolve: './src/middlewares/redis-cache.js',
+    config: {
+      ttl: 3600, // cache TTL in seconds
+    },
+  },
 ];

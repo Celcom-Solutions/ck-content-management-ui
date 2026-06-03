@@ -192,5 +192,9 @@
     "node": ">=20.0.0 <=24.x.x",
     "npm": ">=6.0.0"
   },
-  "isStrapiMonorepo": true
+  "isStrapiMonorepo": true,
+  "dependencies": {
+    "strapi-middleware-cache": "2.1.8",
+    "strapi-plugin-redis": "1.1.0"
+  }
 }
