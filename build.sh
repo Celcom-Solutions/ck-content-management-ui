@@ -1,6 +1,12 @@
 #!/bin/bash
 set -e
 
+#cd ~/repo/ck-content-management-ui
+
+#rm -rf node_modules
+
+#node .yarn/releases/yarn-4.12.0.cjs install
+
 name=$(basename "$PWD")
 version="v1.0.0"
 image_repo="celcomcne2021"
